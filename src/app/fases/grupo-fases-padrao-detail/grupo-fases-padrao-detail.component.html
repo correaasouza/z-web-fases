@@ -1,0 +1,13 @@
+<div class="container">
+  <div *ngIf="grupoFasesPadrao">
+    <h2>{{ grupoFasesPadrao.descricao | uppercase }} Details</h2>
+    <div><span>id: </span>{{grupoFasesPadrao.id}}</div>
+    <div>
+      <label>descrição:
+        <input [(ngModel)]="grupoFasesPadrao.descricao" placeholder="descricao">
+      </label>
+    </div>
+  </div>
+  <button (click)="goBack()">Voltar</button>
+  <button (click)="save()">Salvar</button>
+</div>

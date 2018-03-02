@@ -1,0 +1,19 @@
+<div class="pos-f-t"> 
+  <nav class="navbar navbar-dark" style="background-color: #2c3e50">
+      <a class="navbar-brand" ng-href="#/" alt="zeta">
+        <img [src]="imageZeta" height="25"/>
+      </a>
+      <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+          <button class="navbar-toggler" 
+              id="dropdownFases" 
+              ngbDropdownToggle
+              aria-expanded="false">Menu</button>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownFases">
+            <a class="dropdown-item" routerLink="/fases/dashboard">Painel</a>
+            <a class="dropdown-item" routerLink="/fases/fases">Fases</a>
+            <a class="dropdown-item"routerLink="/fases/grupopadrao">Grupos Fases</a>
+          </div>
+      </div>
+  </nav>
+</div>
+
