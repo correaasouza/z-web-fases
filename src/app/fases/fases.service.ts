@@ -150,12 +150,12 @@ export class FasesService {
     );
   }
 
-  deleteFasesPadrao(FasesPadrao: FasesPadrao | number): Observable<FasesPadrao> {
-    const id = typeof FasesPadrao === 'number' ? FasesPadrao : FasesPadrao.id;
+  deleteFasesPadrao(fasesPadrao: FasesPadrao | number): Observable<FasesPadrao> {
+    const id = typeof fasesPadrao === 'number' ? fasesPadrao : fasesPadrao.id;
     const url = `${this.fasesUrl + '/fasespadroes'}/${id}`;  
     return this.http.delete<FasesPadrao>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted fases padrao id=${id}`)),
-      catchError(this.handleError<FasesPadrao>('fases'))
+      tap(_ => this.log(`deleted fasespadroes id=${id}`)),
+      catchError(this.handleError<FasesPadrao>('fasespadroes'))
     );
   }
 

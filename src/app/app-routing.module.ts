@@ -9,7 +9,6 @@ import { FasesEditComponent } from './fases/fases-edit/fases-edit.component';
 import { MainComponent } from './-main/-main.component';
 import { FasePadraoEditComponent } from './fases/fase-padrao-edit/fase-padrao-edit.component';
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'fases/dashboard', component: DashboardComponent },
@@ -21,7 +20,6 @@ const routes: Routes = [
   { path: 'fases/fases/edit/:id', component: FasesEditComponent },
 
   { path: 'fases/fasepadrao/edit/:id/:idGrupo', component: FasePadraoEditComponent },
-
 
 ];
 

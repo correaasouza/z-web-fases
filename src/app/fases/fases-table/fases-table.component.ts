@@ -13,8 +13,7 @@ export class FasesTableComponent implements OnInit {
   constructor(private fasesService: FasesService) { }
 
   ngOnInit() { 
-    this.getFases();   
-
+    this.getFases();  
   }
 
   getFases(): void {

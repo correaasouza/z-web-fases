@@ -37,7 +37,7 @@ import { FasePadraoEditComponent } from './fases/fase-padrao-edit/fase-padrao-ed
     FasesEditComponent,
     MainComponent,
     FasePadraoTableComponent,
-    FasePadraoEditComponent
+    FasePadraoEditComponent,
   ],
   imports: [
     BrowserModule,

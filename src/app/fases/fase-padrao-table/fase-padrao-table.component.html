@@ -5,10 +5,30 @@
         <h4>Fases</h4> 
     </div>    
     <div class="col col-xs-1 text-right">
+      <!-- Modal -->
+      <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Selecione</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <app-fases-table></app-fases-table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+        </div>
+      </ng-template>
+      <!-- Modal -->
+      <hr>
       <button type="button" class="btn btn-success"> 
         <i class="fa fa-plus"
-        routerLink="/fases/fasepadrao/edit/0/{{idGrupoFases}}"></i> 
+        (click)="open(content)"></i>         
+        <!-- <i class="fa fa-plus"
+        routerLink="/fases/fasepadrao/edit/0/{{idGrupoFases}}"></i>  -->
       </button>
+      <!-- <pre>{{closeResult}}</pre> -->
     </div>  
   </div>
   <table class="table table-striped table-bordered table-list">
