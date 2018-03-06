@@ -1,0 +1,9 @@
+<label>City</label>
+<ng-select [items]="cities"
+           bindLabel="name"
+           bindValue="id"
+           placeholder="Select city"
+           [(ngModel)]="selectedCityId">
+</ng-select>
+<br>
+<p>Selected city ID: {{selectedCityId}}</p>
