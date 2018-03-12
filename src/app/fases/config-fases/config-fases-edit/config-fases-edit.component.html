@@ -1,0 +1,32 @@
+<div class="container">
+  <h4>Fase</h4>
+  <form #f="ngForm"  class="form-horizontal" (ngSubmit)="onSubmit(f)" novalidate>
+    <div class="row">
+      <div class="col-md-6">
+        <label class="center-block">Nome:</label>
+        <input class="form-control" 
+        [(ngModel)]="fases.nome">
+      </div>  
+      <div class="col-md-6">
+        <label class="center-block">Prioridade:</label>
+        <input class="form-control" 
+        [(ngModel)]="fases.prioridade">
+      </div>   
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+          <button 
+          class="btn btn-default"
+          (click)="goBack()">Voltar
+        </button>
+        <button type="submit" 
+          class="btn btn-primary"
+          [disabled]="!f.valid">Salvar
+        </button>
+      </div>  
+    </div>      
+  </form>
+</div>
+
+

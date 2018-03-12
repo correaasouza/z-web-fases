@@ -3,10 +3,10 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GrupoFasesPadrao } from './model/GrupoFasesPadrao';
 import { MessagesService } from '../messages.service';
 import { Fases } from './model/Fases';
 import { FasesPadrao } from './model/FasesPadrao';
+import { GrupoFasesPadrao } from './model/GrupoFasesPadrao';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -126,7 +126,7 @@ export class FasesService {
 
   // Fases Padrão
   getFasesPadrao(idGrupoFases: number): Observable<FasesPadrao[]> {
-    const url = `${this.fasesUrl + '/grupofasespadroes'}/${idGrupoFases}/fasespadroes`;
+    const url = `${this.fasesUrl + '/fasespadroes/grupofasespadroes'}/${idGrupoFases}`;
     return this.http.get<FasesPadrao[]>(url)
     .pipe(
       tap(fases => this.log(`Encontradas Fases Padrão`)),
@@ -142,9 +142,8 @@ export class FasesService {
     );  
   }
 
-  addFasePadrao(FasesPadrao: FasesPadrao, idGrupoFases: number, idFase: number): Observable<FasesPadrao> {
-    const url = `${this.fasesUrl + '/grupofasespadroes'}/${idGrupoFases}/fasespadroes/${idFase}`;
-    return this.http.post<FasesPadrao>(url, FasesPadrao, httpOptions).pipe(
+  addFasePadrao(FasesPadrao: FasesPadrao): Observable<FasesPadrao> {
+    return this.http.post<FasesPadrao>(this.fasesUrl + '/fasespadroes', FasesPadrao, httpOptions).pipe(
       tap((FasesPadrao: FasesPadrao) => this.log(`added fases padrão w/ id=${FasesPadrao.id}`)),
       catchError(this.handleError<FasesPadrao>('addFasesPadrao'))
     );

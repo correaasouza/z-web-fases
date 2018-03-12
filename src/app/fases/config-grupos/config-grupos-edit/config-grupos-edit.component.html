@@ -1,0 +1,46 @@
+<div class="container">
+  <h4>Grupo Fases</h4>
+  <form #f="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(f)"  novalidate>
+    <div class="row">
+      <div class="col-md-6">
+        <label for="descricao">Descricao</label>
+        <input type="text" name="descricao" class="form-control" 
+        placeholder="Descricao"
+        [(ngModel)]="grupoFasesPadrao.descricao"
+        required #descricao="ngModel">
+      </div> 
+      <div class="col-md-3">
+        <label for="sequencia">Sequencia</label>
+        <input type="text" class="form-control" 
+        id="sequencia" name="sequencia" placeholder="Sequencia" 
+        [(ngModel)]="grupoFasesPadrao.sequencia"
+        #sequencia="ngModel" required>
+      </div>  
+      <div class="col-md-3">
+        <label for="perc_comissao" class="center-block">% Comissão:</label>
+        <input class="form-control"
+        id="perc_comissao" name="perc_comissao" placeholder="% Comissão" 
+        [(ngModel)]="grupoFasesPadrao.perc_comissao" 
+        #perccomissao="ngModel">
+      </div>
+    </div> 
+    <br>
+    <app-config-fases-padroes [idGrupoFases] = "id"></app-config-fases-padroes>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="margin-bottom: 1em">
+          <button 
+          class="btn btn-default"
+          (click)="goBack()">Voltar
+          </button>
+          <button type="submit" 
+            [disabled]="!f.valid"
+            class="btn btn-primary">Salvar
+          </button>
+        </div>  
+      </div>  
+    </div>  
+  </form>
+</div>
+<!-- <app-form-debug [form]="f"></app-form-debug> -->

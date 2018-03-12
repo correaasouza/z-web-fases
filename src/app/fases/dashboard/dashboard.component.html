@@ -1,8 +1,7 @@
 <div class="container">
   <h3>Deshboard</h3>
   <div class="grid grid-pad">
-    <a *ngFor="let gFasesPadrao of gruposFasesPadrao" 
-        class="col-1-4" routerLink="/fases/grupopadrao/detail/{{gFasesPadrao.id}}">
+    <a *ngFor="let gFasesPadrao of gruposFasesPadrao">
       <div class="module hero">
         <h4>{{gFasesPadrao.descricao}}</h4>
       </div>
