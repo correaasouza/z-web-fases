@@ -1,0 +1,71 @@
+<div class="container">
+        <h4>Processos</h4>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">    
+                    <div class="col-md-3"> 
+                        <div class="card"> 
+                            <ngb-accordion #acc="ngbAccordion">
+                                <ngb-panel *ngFor="let grupo of gruposProcesso" [title]="grupo.descricao">
+                                    <ng-template ngbPanelContent>
+                                            <div class="card">
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" *ngFor="let processo of grupo.processos">
+                                                        <a class="btn">{{processo.descricao}}</a>
+                                                    </li>
+                                                </ul>
+                                            </div>    
+                                    </ng-template>
+                                </ngb-panel>   
+                            </ngb-accordion>
+                        </div>
+                    </div>
+                    <div class="col-md-9"> 
+                        <div class="card">  
+                            <div class="card-header">DESMONTAGEM</div> 
+                            <div class="row">  
+                                <div class="col-md-6">  
+                                    <div class="card"> 
+                                        <span class="badge badge-primary">Horario Previsto</span>
+                                        <div class="card-body">
+                                            <span class="badge">Início 09/03/2018 10:01:00</span>
+                                            <span class="badge">Fim 09/03/2018 10:01:00</span>
+                                            <span class="badge">4,2 Horas 100 %</span>
+                                        </div> 
+                                    </div>   
+                                </div>    
+                                <div class="col-md-6">  
+                                    <div class="card"> 
+                                        <span class="badge badge-success">Horário Realizado</span>
+                                        <div class="card-body">
+                                            <span class="badge">Início 09/03/2018 10:01:00</span>
+                                            <span class="badge">Fim 09/03/2018 10:01:00</span>
+                                            <span class="badge">6 Horas 85 % de Eficiência</span>
+                                        </div> 
+                                    </div>   
+                                </div>                                      
+                            </div>                                
+                            <br>
+                            <app-config-fases></app-config-fases>
+                        </div>
+                        
+                    </div>    
+                </div>
+            </div>
+        </div>
+    
+    
+    
+        <!-- <div class="row">
+            <div class="col-md-6">    
+                    <tree-root #tree [nodes]="nodes"></tree-root>
+                    
+                      <button (click)="tree.treeModel.focusNextNode()">next node</button>
+                      <button (click)="tree.treeModel.focusPreviousNode()">previous node</button>
+                      <button (click)="tree.treeModel.focusDrillDown()">drill down</button>
+                      <button (click)="tree.treeModel.focusDrillUp()">drill up</button>   
+            </div>
+            <div class="col-md-6">  
+            </div>    
+        </div> -->
+    </div>

@@ -7,10 +7,18 @@ import { MessagesService } from '../messages.service';
 import { Fases } from './model/Fases';
 import { FasesPadrao } from './model/FasesPadrao';
 import { GrupoFasesPadrao } from './model/GrupoFasesPadrao';
+import { GrupoProcesso } from './model/GrupoProcesso';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
+export interface City {
+  id: number;
+  name: string;
+  postCode: number;
+}
 
 @Injectable()
 export class FasesService {
@@ -21,6 +29,15 @@ export class FasesService {
     private messageService: MessagesService,
     private http: HttpClient
   ) { }
+
+  // Grupo Processos  
+  addgruposProcessos(grupoProcesso: GrupoProcesso): Observable<GrupoProcesso> {
+    return this.http.post<GrupoProcesso>(this.fasesUrl + '/grupoprocessos', grupoProcesso, httpOptions).pipe(
+      tap((grupoProcesso: GrupoProcesso) => this.log(`added grupofasespadroes w/ id=${grupoProcesso.id}`)),
+      catchError(this.handleError<GrupoProcesso>('addgrupoProcesso'))
+    );
+  }
+
 
   // Grupo de Fases Padrao
   getGrupoFasesPadrao(): Observable<GrupoFasesPadrao[]> {

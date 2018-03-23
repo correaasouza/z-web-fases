@@ -2,12 +2,12 @@
 <div class="container"> 
   <div class="row">
     <div class="col col-xs-11 text-left">
-        <h4>Fases</h4> 
+        <h4>Grupos Fases</h4> 
     </div>    
     <div class="col col-xs-1 text-right">
-      <button type="button" class="btn btn-success">       
+     <button type="button" class="btn btn-success"> 
         <i class="fa fa-plus"
-        routerLink="/fases/config-fases-padroes/edit/0/{{idGrupoFases}}"></i> 
+        routerLink="/fases/config-grupos/edit/0"></i> 
       </button>
     </div>  
   </div>
@@ -16,25 +16,29 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Descrição</th>
-        <th scope="col">Ação
-        </th>
+        <th scope="col">Sequência</th>
+        <th scope="col">% Comissão</th>
+        <th scope="col">Ação</th>
       </tr>
     </thead>
     <tbody>          
-      <tr *ngFor="let fasePadrao of fasesPadrao">           
-        <td>{{fasePadrao.id}}</td> 
-        <td>{{fasePadrao.descricao}}</td>              
+      <tr *ngFor="let gFasesPadrao of gruposFasesPadrao">           
+        <td>{{gFasesPadrao.id}}</td> 
+        <td>{{gFasesPadrao.descricao}}</td>             
+        <td>{{gFasesPadrao.sequencia}}</td> 
+        <td>{{gFasesPadrao.perc_comissao}}</td> 
         <td>
           <a class="btn btn-default" 
-            routerLink="/fases/config-fases-padroes/edit/{{fasePadrao.id}}/{{idGrupoFases}}">
+            routerLink="/fases/config-grupos/edit/{{gFasesPadrao.id}}">
             <em class="fa fa-pencil"></em>
           </a>
           <a class="btn btn-danger" title="Excluir"
-            (click)="deleteFasesPadrao(fasePadrao)">
+            (click)="deleteGrupoFasesPadrao(gFasesPadrao)">
             <em class="fa fa-trash"></em>
           </a>
         </td>    
       </tr>
     </tbody>
   </table>
+  <app-my-grid-application></app-my-grid-application>
 </div>

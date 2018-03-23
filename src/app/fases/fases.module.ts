@@ -15,14 +15,32 @@ import { ConfigFasesPadroesDetailComponent } from './config-fases-padroes/config
 import { FormDebugComponent } from '../form-debug/form-debug.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ProcessosComponent } from './processos/processos.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TreeTableModule } from "ng-treetable";
+import { BrowserModule } from '@angular/platform-browser';
+import { TreeModule } from 'ng2-tree';
+import { OrdensServicosService } from '../ordens-servicos/ordens-servicos.service';
+import { SidebarModule } from 'ng-sidebar';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AgGridModule } from "ag-grid-angular/main";
+import { RedComponentComponent } from './red-component/red-component.component';
 
-
+  
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     FasesRoutingModule,
-    NgSelectModule
+    NgSelectModule,
+    NgbModule.forRoot(),
+    TreeTableModule,
+    TreeModule,
+    BrowserModule,
+    SidebarModule.forRoot(),
+    AgGridModule.withComponents(
+        [RedComponentComponent]
+    )
   ],  
   declarations: [
     ConfigGruposComponent,
@@ -35,13 +53,16 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ConfigFasesPadroesEditComponent,
     ConfigFasesPadroesDetailComponent,
     FormDebugComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProcessosComponent,
+    RedComponentComponent
   ],
   exports : [
     ConfigGruposComponent
   ],
   providers: [
-    FasesService
+    FasesService,
+    OrdensServicosService
   ],
 })
 export class FasesModule { }

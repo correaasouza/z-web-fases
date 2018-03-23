@@ -6,6 +6,7 @@ import { ConfigFasesComponent } from './config-fases/config-fases.component';
 import { ConfigFasesEditComponent } from './config-fases/config-fases-edit/config-fases-edit.component';
 import { ConfigFasesPadroesEditComponent } from './config-fases-padroes/config-fases-padroes-edit/config-fases-padroes-edit.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProcessosComponent } from './processos/processos.component';
 
 const routes: Routes = [
   { path: 'fases/config-grupos/dashboard', component: DashboardComponent },
@@ -14,7 +15,9 @@ const routes: Routes = [
 
   { path: 'fases/config-fases', component: ConfigFasesComponent },
   { path: 'fases/config-fases/edit/:id', component: ConfigFasesEditComponent },
-  { path: 'fases/config-fases-padroes/edit/:id/:idGrupo', component: ConfigFasesPadroesEditComponent }
+  { path: 'fases/config-fases-padroes/edit/:id/:idGrupo', component: ConfigFasesPadroesEditComponent },
+
+  { path: 'fases/processos/:tipoOrigem/:idOrigem', component: ProcessosComponent}
 ];
 
 @NgModule({

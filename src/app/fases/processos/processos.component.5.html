@@ -1,0 +1,51 @@
+<div class="container">
+    <h4>Processos</h4>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">    
+                <div class="col-md-3"> 
+                    <div class="card"> 
+                        <tree [tree]="tree"></tree>
+                            <!-- <ngb-accordion #acc="ngbAccordion">
+                                <ngb-panel id="toggle-1" title="PINTURA">      
+                                <ng-template ngbPanelContent>
+                                    1
+                                </ng-template>
+                                </ngb-panel>
+                                <ngb-panel id="toggle-2" title="FUNILARIA">
+                                <ng-template ngbPanelContent>
+                                    2
+                                </ng-template>
+                                </ngb-panel>
+                            </ngb-accordion>  -->
+                    </div>
+                </div>
+                <div class="col-md-9"> 
+                    <div class="card">  
+                        <div class="card-header">PINTURA</div>
+                        <p class="card-text">Horas Vendidas: 4,2 hs</p>
+                        <p class="card-text">Horas Trabalhadas: 8,2 hs</p>        
+                        <p class="card-text">Eficiência: 50%</p>
+                        <app-config-fases></app-config-fases>
+                    </div>
+                    
+                </div>    
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="row">
+        <div class="col-md-6">    
+                <tree-root #tree [nodes]="nodes"></tree-root>
+                
+                  <button (click)="tree.treeModel.focusNextNode()">next node</button>
+                  <button (click)="tree.treeModel.focusPreviousNode()">previous node</button>
+                  <button (click)="tree.treeModel.focusDrillDown()">drill down</button>
+                  <button (click)="tree.treeModel.focusDrillUp()">drill up</button>   
+        </div>
+        <div class="col-md-6">  
+        </div>    
+    </div> -->
+</div>

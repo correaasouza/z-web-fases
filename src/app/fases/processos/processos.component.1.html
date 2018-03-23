@@ -1,0 +1,25 @@
+<div class="container">
+    <h4>Processos</h4>
+    <div class="row">
+        <div class="col-md-6">    
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="toggle-1" title="First panel">      
+                <ng-template ngbPanelContent>
+                    1
+                </ng-template>
+                </ngb-panel>
+                <ngb-panel id="toggle-2" title="Second">
+                <ng-template ngbPanelContent>
+                    2
+                </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+        <div class="col-md-6">  
+        </div>    
+    </div>
+    <!-- <hr/> -->
+
+    <!-- <button class="btn btn-sm btn-outline-primary" (click)="acc.toggle('toggle-1')">Toggle first</button>
+    <button class="btn btn-sm btn-outline-primary" (click)="acc.toggle('toggle-2')">Toggle second</button> -->
+</div>

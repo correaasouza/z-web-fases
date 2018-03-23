@@ -1,0 +1,15 @@
+<div class="container">
+    <h4>Processos</h4>
+    <div class="row">
+        <div class="col-md-6">    
+                <tree-root #tree [nodes]="nodes"></tree-root>
+                
+                  <button (click)="tree.treeModel.focusNextNode()">next node</button>
+                  <button (click)="tree.treeModel.focusPreviousNode()">previous node</button>
+                  <button (click)="tree.treeModel.focusDrillDown()">drill down</button>
+                  <button (click)="tree.treeModel.focusDrillUp()">drill up</button>   
+        </div>
+        <div class="col-md-6">  
+        </div>    
+    </div>
+</div>

@@ -18,11 +18,13 @@ export class ConfigGruposEditComponent implements OnInit  {
   originalRequest: string;
   statusCode: number; 
   
+  
   constructor(
     private route: ActivatedRoute,
     private fasesService: FasesService,
-    private location: Location
-  ) {}
+    private location: Location,
+  ) {
+  }
   
   ngOnInit() {  
     this.id = +this.route.snapshot.paramMap.get('id');

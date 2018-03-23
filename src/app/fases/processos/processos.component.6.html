@@ -1,0 +1,17 @@
+<ng-sidebar-container>
+        
+    <!-- A sidebar -->
+    <ng-sidebar #sidebar [(opened)]="_opened">
+    <p>Sidebar contents</p>
+    <div>
+        <h2>Hello {{name}}</h2>
+    </div>
+    <button (click)="sidebar.close()">Close sidebar</button>
+    </ng-sidebar>
+
+</ng-sidebar-container>
+
+<div id="buttons">
+    <button (click)="sidebar.open()">Open sidebar</button>
+    <button (click)="_toggleSidebar()">Toggle sidebar</button>
+</div> 

@@ -1,0 +1,38 @@
+<div class="container">
+    <h4>Processos</h4>
+    <div class="row">
+        <div class="col-md-3">  
+            
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">FUNILARIA</h6>
+                <p class="card-text">Informações do grupo de fases</p>
+                    <div class="card" (click)="isCollapsed = !isCollapsed"
+                    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">FUNILARIA</h6>
+                            <p class="card-text">Informações do grupo de fases</p>
+                            <ul class="list-group">
+                                    <li class="list-group-item active">FASES</li>
+                                    <li class="list-group-item">Desmontagem</li>
+                                    <li class="list-group-item">Preparação</li>
+                                    <li class="list-group-item">Pintura</li>
+                                    <li class="list-group-item">Montagem</li>
+                                </ul>
+                        </div>
+                    </div>            
+                    <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">PINTURA</h6>
+                            <p class="card-text">Informações do grupo de fases</p>
+                        </div>
+                    </div>  
+            </div>                
+        </div>  
+
+               
+    </div>
+    <!-- <hr/> -->
+
+    <!-- <button class="btn btn-sm btn-outline-primary" (click)="acc.toggle('toggle-1')">Toggle first</button>
+    <button class="btn btn-sm btn-outline-primary" (click)="acc.toggle('toggle-2')">Toggle second</button> -->
+</div>

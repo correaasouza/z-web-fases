@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
 import { NgSelectModule, NgOption } from '@ng-select/ng-select';
 import { AppRoutingModule } from './/app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 import { AppComponent } from './app.component';
@@ -26,7 +28,8 @@ import { MessagesService } from './messages.service';
     HttpClientModule,    
     NgSelectModule,
     FasesModule,
-    NgbModule.forRoot(), 
+    NgbModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     MessagesService,
